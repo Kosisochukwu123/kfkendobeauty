@@ -137,3 +137,48 @@ textarea {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+
+
+/* ==============================================
+   SCROLL ENTRANCE ANIMATIONS
+   Elements get class 'scroll-animate' and
+   'is-visible' is added by useScrollAnimation hook
+   ============================================== */
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.scroll-animate-children > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-animate-children.is-visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0.05s; }
+.scroll-animate-children.is-visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 0.15s; }
+.scroll-animate-children.is-visible > *:nth-child(3) { opacity:1; transform:none; transition-delay: 0.25s; }
+.scroll-animate-children.is-visible > *:nth-child(4) { opacity:1; transform:none; transition-delay: 0.35s; }
+.scroll-animate-children.is-visible > *:nth-child(5) { opacity:1; transform:none; transition-delay: 0.45s; }
+.scroll-animate-children.is-visible > *:nth-child(6) { opacity:1; transform:none; transition-delay: 0.55s; }
+.scroll-animate-children.is-visible > *:nth-child(n+7) { opacity:1; transform:none; transition-delay: 0.6s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate,
+  .scroll-animate-children > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+

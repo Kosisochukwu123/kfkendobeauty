@@ -119,6 +119,15 @@ export default function Navbar() {
                   <div className="navbar__dropdown-sub">Our expert stylists</div>
                 </div>
               </Link>
+              <Link to="/prices" className="navbar__dropdown-item" role="menuitem">
+                <span className="navbar__dropdown-icon">
+                  <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#C9A84C" strokeWidth="1.2"/><path d="M10 6V10L12.5 12.5" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                </span>
+                <div>
+                  <div className="navbar__dropdown-label">Price List</div>
+                  <div className="navbar__dropdown-sub">All service prices</div>
+                </div>
+              </Link>
               <Link to="/jobs" className="navbar__dropdown-item" role="menuitem">
                 <span className="navbar__dropdown-icon">
                   <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="6" width="14" height="11" rx="1.5" stroke="#C9A84C" strokeWidth="1.2"/><path d="M7 6V4.5C7 3.7 7.7 3 8.5 3H11.5C12.3 3 13 3.7 13 4.5V6" stroke="#C9A84C" strokeWidth="1.2" fill="none"/><line x1="3" y1="10" x2="17" y2="10" stroke="#C9A84C" strokeWidth="1.2"/></svg>
@@ -205,9 +214,10 @@ export default function Navbar() {
             </span>
           </button>
           <div className={`mobile-menu__accordion${mPagesOpen ? ' open' : ''}`}>
-            <Link to="/wigs" className="mobile-menu__sub-link" onClick={closeMenu}>Wig Collection</Link>
-            <Link to="/team" className="mobile-menu__sub-link" onClick={closeMenu}>Meet the Team</Link>
-            <Link to="/jobs" className="mobile-menu__sub-link" onClick={closeMenu}>Careers & Jobs</Link>
+            <Link to="/wigs"   className="mobile-menu__sub-link" onClick={closeMenu}>Wig Collection</Link>
+            <Link to="/team"   className="mobile-menu__sub-link" onClick={closeMenu}>Meet the Team</Link>
+            <Link to="/prices" className="mobile-menu__sub-link" onClick={closeMenu}>Price List</Link>
+            <Link to="/jobs"   className="mobile-menu__sub-link" onClick={closeMenu}>Careers & Jobs</Link>
           </div>
 
           <button className="mobile-menu__link" onClick={() => scrollToSection('gallery')}>Gallery</button>
@@ -222,4 +232,3 @@ export default function Navbar() {
     </>
   )
 }
-

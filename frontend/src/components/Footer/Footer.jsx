@@ -1,37 +1,50 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import './Footer.css'
-import SocialIcons from '../SocialIcons/SocialIcons'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Footer.css";
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 const quickLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Wig Collection', to: '/wigs' },
-  { label: 'Meet the Team', to: '/team' },
-  { label: 'Careers & Jobs', to: '/jobs' },
-]
+  { label: "Home", to: "/" },
+  { label: "Wig Collection", to: "/wigs" },
+  { label: "Meet the Team", to: "/team" },
+  { label: "Price List", to: "/prices" },
+  { label: "Careers & Jobs", to: "/jobs" },
+];
 
 const serviceLinks = [
-  'Hairstyling', 'Wig Installation', 'Nail Artistry',
-  'Barbering', 'Braiding & Plaiting', 'Spa Treatments',
-]
+  "Hairstyling",
+  "Wig Installation",
+  "Nail Artistry",
+  "Barbering",
+  "Braiding & Plaiting",
+  "Spa Treatments",
+];
 
 const hours = [
-  { day: 'Mon – Fri',  time: '9am – 7pm' },
-  { day: 'Saturday',  time: '8am – 8pm' },
-  { day: 'Sunday',    time: '12pm – 6pm' },
-]
+  { day: "Mon – Fri", time: "9am – 7pm" },
+  { day: "Saturday", time: "8am – 8pm" },
+  { day: "Sunday", time: "12pm – 6pm" },
+];
 
 export default function Footer() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const scrollToBooking = () => {
-    if (window.location.pathname !== '/') {
-      navigate('/')
-      setTimeout(() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }), 400)
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(
+        () =>
+          document
+            .getElementById("booking")
+            ?.scrollIntoView({ behavior: "smooth" }),
+        400,
+      );
     } else {
-      document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+      document
+        .getElementById("booking")
+        ?.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <footer className="footer" aria-label="Site footer">
@@ -42,8 +55,8 @@ export default function Footer() {
             Kfkendo<span>.</span>
           </Link>
           <p className="footer__desc">
-            Luxury hair, beauty and spa services crafted to celebrate your most radiant self.
-            Where every visit is an experience.
+            Luxury hair, beauty and spa services crafted to celebrate your most
+            radiant self. Where every visit is an experience.
           </p>
           <div className="footer__social" aria-label="Social media links">
             <SocialIcons variant="footer" />
@@ -55,7 +68,9 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <nav className="footer__links" aria-label="Footer navigation">
             {quickLinks.map(({ label, to }) => (
-              <Link key={label} to={to}>{label}</Link>
+              <Link key={label} to={to}>
+                {label}
+              </Link>
             ))}
             <button onClick={scrollToBooking}>Book Now</button>
           </nav>
@@ -65,8 +80,10 @@ export default function Footer() {
         <div className="footer__col">
           <h4>Services</h4>
           <div className="footer__links">
-            {serviceLinks.map(s => (
-              <button key={s} onClick={scrollToBooking}>{s}</button>
+            {serviceLinks.map((s) => (
+              <button key={s} onClick={scrollToBooking}>
+                {s}
+              </button>
             ))}
           </div>
         </div>
@@ -84,15 +101,21 @@ export default function Footer() {
           </div>
           <div className="footer__contact" aria-label="Contact information">
             <span className="footer__contact-item">📞 +234 800 KFKENDO</span>
-            <span className="footer__contact-item">✉ hello@kfkendobeauty.com</span>
-            <span className="footer__contact-item">📍 Lagos, Nigeria</span>
+            <span className="footer__contact-item">
+              ✉ hello@kfkendobeauty.com
+            </span>
+            <span className="footer__contact-item">
+              📍 Uyo, Akwa Ibom State, Nigeria
+            </span>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="footer__bottom">
-        <p className="footer__copy">© 2025 Kfkendo Beauty. All rights reserved.</p>
+        <p className="footer__copy">
+          © 2025 Kfkendo Beauty. All rights reserved.
+        </p>
         <div className="footer__legal">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
@@ -100,5 +123,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
