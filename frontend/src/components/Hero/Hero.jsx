@@ -55,7 +55,7 @@ export default function Hero() {
           <strong>Meets Artistry</strong>
         </h1>
 
-        <p className="hero__subtitle">Kfkendo Luxury Salon</p>
+        <p className="hero__subtitle">Kfkendobeauty Luxury Salon</p>
 
         <p className="hero__desc">
           Experience transformative beauty services crafted with precision and passion.

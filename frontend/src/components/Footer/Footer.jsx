@@ -7,6 +7,7 @@ const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'Wig Collection', to: '/wigs' },
   { label: 'Meet the Team', to: '/team' },
+  { label: 'Careers & Jobs', to: '/jobs' },
 ]
 
 const serviceLinks = [

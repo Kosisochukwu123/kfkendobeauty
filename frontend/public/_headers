@@ -1,0 +1,21 @@
+# Kfkendo Beauty — HTTP cache headers
+# (Netlify / any static host respects this file)
+
+# Images — cache for 1 year, immutable
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# JS and CSS build output (Vite hashes filenames so safe to cache forever)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML — always revalidate so new deployments are picked up
+/
+  Cache-Control: no-cache
+
+/*.html
+  Cache-Control: no-cache
