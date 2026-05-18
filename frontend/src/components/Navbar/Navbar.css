@@ -1,0 +1,230 @@
+/* ==============================================
+   NAVBAR
+   ============================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  height: 72px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition-base);
+  backdrop-filter: blur(12px);
+  background: rgba(253, 248, 245, 0.85);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.navbar.scrolled {
+  background: rgba(253, 248, 245, 0.97);
+  box-shadow: 0 2px 20px rgba(196, 96, 127, 0.08);
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.navbar__logo span {
+  color: var(--gold);
+}
+
+/* ── Desktop Links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--gold);
+}
+
+/* ── CTA Button ── */
+.navbar__cta {
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.navbar__cta:hover {
+  background: var(--pink-deep);
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  z-index: var(--z-menu);
+}
+
+.hamburger__line {
+  display: block;
+  height: 1.5px;
+  background: var(--text);
+  transition: var(--transition-slow);
+  transform-origin: right;
+}
+
+.hamburger__line:nth-child(1) { width: 28px; }
+.hamburger__line:nth-child(2) { width: 20px; margin-left: 8px; }
+.hamburger__line:nth-child(3) { width: 14px; margin-left: 14px; }
+
+.hamburger.open .hamburger__line:nth-child(1) {
+  width: 22px;
+  transform: rotate(-45deg);
+  background: var(--gold);
+}
+
+.hamburger.open .hamburger__line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open .hamburger__line:nth-child(3) {
+  width: 22px;
+  transform: rotate(45deg);
+  background: var(--gold);
+}
+
+/* ── Mobile Menu Overlay ── */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 24, 16, 0.45);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Mobile Menu Panel ── */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background: var(--cream);
+  z-index: var(--z-menu);
+  transition: right 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+  padding: 5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu__link {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  transition: var(--transition-base);
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  width: 100%;
+}
+
+.mobile-menu__link:hover {
+  color: var(--gold);
+  padding-left: 8px;
+}
+
+.mobile-menu__social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.mobile-menu__social-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.mobile-menu__social-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mobile-menu__social-link:hover {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

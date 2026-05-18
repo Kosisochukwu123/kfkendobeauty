@@ -1,0 +1,64 @@
+/* ==============================================
+   KFKENDO BEAUTY — CSS DESIGN TOKENS
+   All brand colors, typography, spacing, shadows
+   ============================================== */
+
+:root {
+  /* ── Brand Colors ── */
+  --pink:          #E8A0B4;
+  --pink-deep:     #C4607F;
+  --pink-light:    #F5D0DC;
+  --pink-pale:     #FDF0F4;
+
+  --gold:          #C9A84C;
+  --gold-light:    #E8D5A3;
+  --gold-pale:     #FBF5E6;
+
+  --cream:         #FDF8F5;
+  --white:         #FEFEFE;
+
+  --text:          #2C1810;
+  --text-muted:    #8A6A5E;
+  --text-light:    rgba(255, 255, 255, 0.65);
+
+  /* ── Dark Panel ── */
+  --dark:          #2C1810;
+  --dark-mid:      #4A2030;
+  --dark-accent:   #6B2A40;
+
+  /* ── Typography ── */
+  --font-display:  'Cormorant Garamond', serif;
+  --font-sans:     'Josefin Sans', sans-serif;
+  --font-accent:   'Playfair Display', serif;
+
+  /* ── Spacing ── */
+  --space-xs:   0.4rem;
+  --space-sm:   0.8rem;
+  --space-md:   1.5rem;
+  --space-lg:   3rem;
+  --space-xl:   5rem;
+
+  /* ── Borders ── */
+  --border-gold:       1px solid rgba(201, 168, 76, 0.25);
+  --border-gold-soft:  1px solid rgba(201, 168, 76, 0.12);
+  --border-pink:       1px solid rgba(232, 160, 180, 0.3);
+
+  /* ── Transitions ── */
+  --transition-fast:   all 0.25s ease;
+  --transition-base:   all 0.35s ease;
+  --transition-slow:   all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+
+  /* ── Shadows ── */
+  --shadow-pink:  0 20px 40px rgba(196, 96, 127, 0.15);
+  --shadow-dark:  0 10px 30px rgba(44, 24, 16, 0.2);
+  --shadow-gold:  0 4px 20px rgba(201, 168, 76, 0.2);
+
+  /* ── Z-index ── */
+  --z-base:     1;
+  --z-dropdown: 100;
+  --z-sticky:   500;
+  --z-overlay:  1000;
+  --z-nav:      1010;
+  --z-menu:     1020;
+  --z-toast:    9999;
+}

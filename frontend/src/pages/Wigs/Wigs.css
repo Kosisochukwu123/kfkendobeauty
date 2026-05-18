@@ -1,0 +1,164 @@
+/* ==============================================
+   WIGS PAGE
+   ============================================== */
+
+/* ── Hero ── */
+.wigs-page__hero {
+  padding: 7rem 2rem 4rem;
+  background: linear-gradient(160deg, #1A0A0F, #3D1525, #6B2A40);
+  text-align: center;
+  color: var(--white);
+}
+
+.wigs-page__hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.wigs-page__hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.wigs-page__hero-desc {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 500px;
+  margin: 0.5rem auto 2rem;
+  line-height: 1.8;
+}
+
+.wigs-page__promo-badge {
+  display: inline-block;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 0.5rem 2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+/* ── Catalog ── */
+.wigs-page__catalog {
+  padding: var(--space-xl) 2rem;
+  background: var(--cream);
+}
+
+.wig-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Wig Card ── */
+.wig-card {
+  background: var(--white);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.wig-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-pink);
+}
+
+.wig-card__img {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wig-card__img-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.wig-card:hover .wig-card__img-inner {
+  transform: scale(1.04);
+}
+
+.wig-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--pink-deep);
+  color: var(--white);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  z-index: 1;
+}
+
+.wig-card__badge--gold {
+  background: var(--gold);
+  color: var(--text);
+}
+
+.wig-card__info {
+  padding: 1.2rem 1.4rem;
+}
+
+.wig-card__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.wig-card__type {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.wig-card__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wig-card__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--pink-deep);
+}
+
+.wig-card__old-price {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-left: 0.4rem;
+}
+
+.wig-card__btn {
+  background: var(--text);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.wig-card__btn:hover {
+  background: var(--gold);
+}

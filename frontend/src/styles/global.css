@@ -1,0 +1,139 @@
+/* ==============================================
+   KFKENDO BEAUTY — GLOBAL STYLES & RESET
+   ============================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pink-pale);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ── Links ── */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+/* ── Images ── */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* ── Lists ── */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── Buttons ── */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ── Inputs ── */
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+/* ── Focus rings for accessibility ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--pink-light);
+  color: var(--text);
+}
+
+/* ── Utility: screen reader only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Page entrance animation ── */
+.page-enter {
+  animation: fadeUpIn 0.5s ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Shimmer animation (shared) ── */
+@keyframes shimmer {
+  to {
+    left: 150%;
+  }
+}
+
+/* ── Scroll pulse animation ── */
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleY(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

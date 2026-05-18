@@ -1,0 +1,164 @@
+/* ==============================================
+   KFKENDO BEAUTY — APP LAYOUT
+   ============================================== */
+
+.app-main {
+  min-height: 100vh;
+}
+
+/* ── Shared Section Spacing ── */
+.section {
+  padding: var(--space-xl) 2rem;
+}
+
+.section--dark {
+  background: var(--dark);
+}
+
+.section--white {
+  background: var(--white);
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+/* ── Shared Container ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container--wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container--narrow {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Shared Section Header ── */
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.section-label--center {
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--pink-deep);
+}
+
+.section-title--light {
+  color: var(--white);
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 1.2rem 0;
+}
+
+.section-divider--center {
+  margin: 1.2rem auto 0;
+}
+
+.section-desc {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+.section-desc--center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ── Shared Buttons ── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: none;
+}
+
+.btn--primary {
+  background: var(--gold);
+  color: var(--text);
+}
+
+.btn--primary:hover {
+  background: var(--pink-deep);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn--outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn--outline-dark {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(44, 24, 16, 0.3);
+}
+
+.btn--outline-dark:hover {
+  background: var(--text);
+  color: var(--white);
+}
+
+.btn--full {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.75rem;
+}
+
+/* ── Gold line decorator ── */
+.gold-line {
+  width: 60px;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--gold), transparent);
+}
+
+.gold-line--center {
+  margin: 1rem auto 0;
+}

@@ -1,0 +1,87 @@
+/* ==============================================
+   BOOKING SECTION
+   ============================================== */
+
+.booking {
+  padding: var(--space-xl) 2rem;
+  background: var(--cream);
+  text-align: center;
+}
+
+.booking__inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Form ── */
+.booking__form {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+
+.booking__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.form-group__input,
+.form-group__select {
+  background: var(--white);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.form-group__input:focus,
+.form-group__select:focus {
+  border-color: var(--gold);
+}
+
+.form-group__input::placeholder {
+  color: rgba(138, 106, 94, 0.5);
+  font-weight: 200;
+}
+
+/* ── Success message ── */
+.booking__success {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .booking__form-row {
+    grid-template-columns: 1fr;
+  }
+}
