@@ -11,6 +11,8 @@ const wigs = [
     badge: '-30%',
     badgeVariant: '',
     bg: 'linear-gradient(160deg, #C4607F, #E8A0B4, #F5D0DC)',
+    // ── Your real image ──
+    image: '/images/hairs',
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ const wigs = [
     badge: 'New',
     badgeVariant: '',
     bg: 'linear-gradient(160deg, #3D1520, #6B2A40, #C4607F)',
+    image: null,
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ const wigs = [
     badge: 'Trending',
     badgeVariant: 'gold',
     bg: 'linear-gradient(160deg, #C9A84C, #E8D5A3, #FBF5E6)',
+    image: null,
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ const wigs = [
     badge: '-30%',
     badgeVariant: '',
     bg: 'linear-gradient(160deg, #2C1810, #4A2030, #8B4562)',
+    image: null,
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ const wigs = [
     badge: '-30%',
     badgeVariant: '',
     bg: 'linear-gradient(160deg, #8B4562, #C4607F, #E8A0B4)',
+    image: null,
   },
   {
     id: 6,
@@ -61,8 +67,23 @@ const wigs = [
     badge: 'Hot',
     badgeVariant: 'gold',
     bg: 'linear-gradient(160deg, #4A2030, #C4607F, #C9A84C)',
+    image: null,
   },
 ]
+
+function handleImgError(e) {
+  const exts = ['.jpg', '.jpeg', '.png', '.webp', '.avif', '.jfif']
+  const tried = e.target.dataset.tried
+    ? e.target.dataset.tried.split(',')
+    : []
+  const next = exts.find(x => !tried.includes(x))
+  if (next) {
+    e.target.dataset.tried = [...tried, next].join(',')
+    e.target.src = `${e.target.dataset.base}${next}`
+  } else {
+    e.target.style.display = 'none'
+  }
+}
 
 export default function Wigs() {
   const scrollToBooking = () => {
@@ -91,14 +112,26 @@ export default function Wigs() {
       <section className="wigs-page__catalog" aria-labelledby="wigs-catalog-heading">
         <h2 className="sr-only" id="wigs-catalog-heading">Wig Catalog</h2>
         <div className="wig-grid">
-          {wigs.map(({ id, name, type, price, oldPrice, badge, badgeVariant, bg }) => (
+          {wigs.map(({ id, name, type, price, oldPrice, badge, badgeVariant, bg, image }) => (
             <article className="wig-card" key={id}>
               <div className="wig-card__img">
-                <div
-                  className="wig-card__img-inner"
-                  style={{ background: bg }}
-                  aria-hidden="true"
-                />
+
+                {image ? (
+                  <img
+                    src={image}
+                    data-base={image}
+                    alt={name}
+                    className="wig-card__img-inner wig-card__img-photo"
+                    onError={handleImgError}
+                  />
+                ) : (
+                  <div
+                    className="wig-card__img-inner"
+                    style={{ background: bg }}
+                    aria-hidden="true"
+                  />
+                )}
+
                 <span className={`wig-card__badge${badgeVariant === 'gold' ? ' wig-card__badge--gold' : ''}`}>
                   {badge}
                 </span>

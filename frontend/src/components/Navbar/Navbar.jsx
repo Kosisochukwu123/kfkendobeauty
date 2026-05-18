@@ -15,14 +15,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [location.pathname])
 
   const toggleMenu = () => setMenuOpen(prev => !prev)
-  const closeMenu = () => setMenuOpen(false)
+  const closeMenu  = () => setMenuOpen(false)
 
   const scrollToSection = (id) => {
     closeMenu()
@@ -52,6 +51,7 @@ export default function Navbar() {
           <li><Link to="/wigs" className={`navbar__link${isActive('/wigs') ? ' active' : ''}`}>Wigs</Link></li>
           <li><Link to="/team" className={`navbar__link${isActive('/team') ? ' active' : ''}`}>Team</Link></li>
           <li><button className="navbar__link" onClick={() => scrollToSection('gallery')}>Gallery</button></li>
+          <li><button className="navbar__link" onClick={() => scrollToSection('location')}>Location</button></li>
           <li><button className="navbar__link" onClick={() => scrollToSection('booking')}>Contact</button></li>
         </ul>
 
@@ -59,10 +59,11 @@ export default function Navbar() {
           Book Now
         </button>
 
+        {/* Hamburger — three staggered lines, opens the menu */}
         <button
-          className={`hamburger${menuOpen ? ' open' : ''}`}
+          className="hamburger"
           onClick={toggleMenu}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-label="Open menu"
           aria-expanded={menuOpen}
         >
           <span className="hamburger__line" />
@@ -71,26 +72,42 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Overlay */}
+      {/* Dark overlay */}
       <div
         className={`menu-overlay${menuOpen ? ' show' : ''}`}
         onClick={closeMenu}
         aria-hidden="true"
       />
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel */}
       <div
         className={`mobile-menu${menuOpen ? ' open' : ''}`}
         role="dialog"
+        aria-modal="true"
         aria-label="Mobile navigation"
       >
-        <Link to="/" className="mobile-menu__link" onClick={closeMenu}>Home</Link>
-        <button className="mobile-menu__link" onClick={() => scrollToSection('about')}>About</button>
-        <button className="mobile-menu__link" onClick={() => scrollToSection('services')}>Services</button>
-        <Link to="/wigs" className="mobile-menu__link" onClick={closeMenu}>Wig Collection</Link>
-        <Link to="/team" className="mobile-menu__link" onClick={closeMenu}>Meet the Team</Link>
-        <button className="mobile-menu__link" onClick={() => scrollToSection('gallery')}>Gallery</button>
-        <button className="mobile-menu__link" onClick={() => scrollToSection('booking')}>Book Now</button>
+        {/* Close button sits inside the cream panel — always clearly visible */}
+        <button
+          className="mobile-menu__close"
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="3"  y1="3"  x2="19" y2="19" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round"/>
+            <line x1="19" y1="3"  x2="3"  y2="19" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round"/>
+          </svg>
+        </button>
+
+        <nav aria-label="Mobile links">
+          <Link   to="/"     className="mobile-menu__link" onClick={closeMenu}>Home</Link>
+          <button className="mobile-menu__link" onClick={() => scrollToSection('about')}>About</button>
+          <button className="mobile-menu__link" onClick={() => scrollToSection('services')}>Services</button>
+          <Link   to="/wigs" className="mobile-menu__link" onClick={closeMenu}>Wig Collection</Link>
+          <Link   to="/team" className="mobile-menu__link" onClick={closeMenu}>Meet the Team</Link>
+          <button className="mobile-menu__link" onClick={() => scrollToSection('gallery')}>Gallery</button>
+          <button className="mobile-menu__link" onClick={() => scrollToSection('location')}>Our Location</button>
+          <button className="mobile-menu__link" onClick={() => scrollToSection('booking')}>Book Now</button>
+        </nav>
 
         <div className="mobile-menu__social" aria-label="Social media links">
           <SocialIcons />

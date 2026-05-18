@@ -85,7 +85,7 @@
   transform: translateY(-1px);
 }
 
-/* ── Hamburger ── */
+/* ── Hamburger — three staggered lines, opens the menu ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -99,31 +99,58 @@
 
 .hamburger__line {
   display: block;
-  height: 1.5px;
+  height: 2px;
   background: var(--text);
-  transition: var(--transition-slow);
-  transform-origin: right;
+  border-radius: 2px;
+  transition: var(--transition-base);
 }
 
+/* Staggered lengths — top longest, middle, bottom shortest */
 .hamburger__line:nth-child(1) { width: 28px; }
 .hamburger__line:nth-child(2) { width: 20px; margin-left: 8px; }
 .hamburger__line:nth-child(3) { width: 14px; margin-left: 14px; }
 
-.hamburger.open .hamburger__line:nth-child(1) {
-  width: 22px;
-  transform: rotate(-45deg);
+.hamburger:hover .hamburger__line {
   background: var(--gold);
 }
 
-.hamburger.open .hamburger__line:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
+/* ── Close button — lives INSIDE the mobile panel on cream background ── */
+.mobile-menu__close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 0.4rem 0.8rem 0.4rem 0.6rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: var(--transition-base);
+  color: var(--gold);
 }
 
-.hamburger.open .hamburger__line:nth-child(3) {
-  width: 22px;
-  transform: rotate(45deg);
+.mobile-menu__close span {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.mobile-menu__close:hover {
   background: var(--gold);
+  border-color: var(--gold);
+}
+
+.mobile-menu__close:hover svg line {
+  stroke: var(--white);
+}
+
+.mobile-menu__close:hover span {
+  color: var(--white);
 }
 
 /* ── Mobile Menu Overlay ── */
@@ -153,10 +180,13 @@
   background: var(--cream);
   z-index: var(--z-menu);
   transition: right 0.45s cubic-bezier(0.77, 0, 0.18, 1);
-  padding: 5rem 2rem 2rem;
+  padding: 4.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   border-left: 1px solid rgba(201, 168, 76, 0.2);
+  /* Needed so the absolute close button positions inside the panel */
+  position: fixed;
+  overflow-y: auto;
 }
 
 .mobile-menu.open {

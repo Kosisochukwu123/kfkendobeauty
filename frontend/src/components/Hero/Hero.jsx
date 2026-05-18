@@ -21,7 +21,31 @@ export default function Hero() {
       <div className="hero__bg" aria-hidden="true" />
       <div className="hero__pattern" aria-hidden="true" />
       <div className="hero__overlay" aria-hidden="true" />
-      <div className="hero__img-panel" aria-hidden="true" />
+
+      {/* ── Right side: real image instead of the gradient panel ── */}
+      <div className="hero__img-panel" aria-hidden="true">
+        <img
+          src="/images/hero-image"
+          alt="Kfkendo Beauty salon"
+          className="hero__img"
+          onError={(e) => {
+            /* Silently fall back to the gradient if the file has an extension
+               we didn't anticipate — try common extensions one by one */
+            const exts = ['.jpg', '.jpeg', '.png', '.webp', '.avif', '.jfif', '.bmp']
+            const tried = e.target.dataset.tried
+              ? e.target.dataset.tried.split(',')
+              : []
+            const next = exts.find(x => !tried.includes(x))
+            if (next) {
+              e.target.dataset.tried = [...tried, next].join(',')
+              e.target.src = `/images/hero-image${next}`
+            } else {
+              /* All extensions exhausted — hide img, gradient CSS shows through */
+              e.target.style.display = 'none'
+            }
+          }}
+        />
+      </div>
 
       <div className="hero__content">
         <div className="hero__badge">Premium Hair · Beauty · Spa</div>

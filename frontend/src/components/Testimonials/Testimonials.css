@@ -1,43 +1,141 @@
 /* ==============================================
-   TESTIMONIALS SECTION
+   TESTIMONIALS — SCROLLABLE CAROUSEL
    ============================================== */
 
 .testimonials {
-  padding: var(--space-xl) 2rem;
+  padding: var(--space-xl) 0;
   background: linear-gradient(135deg, var(--dark), #3D1520);
+  /* Only hide horizontal overflow on the section itself */
+  overflow: hidden;
 }
 
+/* ── Header ── */
 .testimonials__header {
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1rem;
   text-align: center;
+  padding: 0 2rem;
 }
 
-.testimonials__grid {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* ── Controls row: arrows + count ── */
+.testimonials__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-/* ── Card ── */
+.testimonials__arrow {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: none;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+  flex-shrink: 0;
+}
+
+.testimonials__arrow:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.testimonials__arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.testimonials__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.testimonials__count {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  min-width: 50px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.testimonials__count span {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+/* ── Track wrapper ──
+   We need overflow-x hidden to clip the scrolling
+   but overflow-y visible so staggered cards aren't cut.
+   Setting overflow-x and overflow-y separately achieves this. */
+.testimonials__track-wrap {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  cursor: grab;
+  user-select: none;
+  /* Extra bottom space so the lower staggered cards breathe */
+  padding-bottom: 1rem;
+}
+
+.testimonials__track-wrap:active {
+  cursor: grabbing;
+}
+
+.testimonials__track {
+  display: flex;
+  align-items: flex-start; /* cards align to top, not stretched to equal height */
+  gap: 1.5rem;
+  /* top padding: room for the overflowing quote mark pseudo-element
+     bottom padding: room for the lowest staggered card's bottom edge */
+  padding: 2.5rem 2rem 1rem;
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+  will-change: transform;
+}
+
+/* ── Cards ── */
 .testimonial-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(201, 168, 76, 0.15);
   padding: 2rem;
   position: relative;
+  /* Fixed width — never stretch or shrink */
+  flex: 0 0 300px;
+  width: 300px;
+  transition: border-color 0.3s, background 0.3s;
+  box-sizing: border-box;
 }
 
+/* Stagger: odd cards drop down, even cards stay at top */
+.testimonial-card:nth-child(odd) {
+  margin-top: 2.5rem;
+}
+
+.testimonial-card:nth-child(even) {
+  margin-top: 0;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Decorative large quote mark — floats above card top edge */
 .testimonial-card::before {
-  content: '"';
+  content: '\201C';
   font-family: var(--font-display);
   font-size: 5rem;
   font-weight: 600;
-  color: rgba(201, 168, 76, 0.18);
+  color: rgba(201, 168, 76, 0.15);
   position: absolute;
-  top: -1rem;
-  left: 1.5rem;
+  top: -0.8rem;
+  left: 1.2rem;
   line-height: 1;
   pointer-events: none;
 }
@@ -79,9 +177,66 @@
   color: var(--white);
 }
 
+.testimonial-card__role {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 0.1rem;
+}
+
 .testimonial-card__stars {
   color: var(--gold);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   margin-top: 0.15rem;
+}
+
+/* ── Dot indicators ── */
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.testimonials__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-base);
+  padding: 0;
+}
+
+.testimonials__dot.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+
+  .testimonial-card:nth-child(odd) {
+    margin-top: 1.5rem;
+  }
+}
+
+.testimonials__track-wrap {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  cursor: grab;
+  user-select: none;
+  padding-bottom: 1rem;
+  /* Tells the browser: horizontal = carousel swipe, vertical = page scroll */
+  touch-action: pan-y;
 }

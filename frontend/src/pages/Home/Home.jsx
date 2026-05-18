@@ -6,6 +6,7 @@ import Services from '../../components/Services/Services'
 import Features from '../../components/Features/Features'
 import Gallery from '../../components/Gallery/Gallery'
 import Testimonials from '../../components/Testimonials/Testimonials'
+import MapSection from '../../components/Map/MapSection'
 import Booking from '../../components/Booking/Booking'
 import './Home.css'
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Features />
       <Gallery />
       <Testimonials />
+      <MapSection />
       <Booking />
     </div>
   )
