@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Services.css'
 
 const services = [
@@ -6,7 +7,6 @@ const services = [
     id: 'hairstyling',
     name: 'Hairstyling',
     desc: 'Bespoke cuts, blowouts, colour treatments and styling tailored to your vision',
-    price: 'From ₦8,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="24" cy="14" r="10" stroke="#C9A84C" strokeWidth="1.5" />
@@ -21,7 +21,6 @@ const services = [
     id: 'wigs',
     name: 'Wig Installation',
     desc: 'Custom wig fittings, lace fronts, full units and professional installation services',
-    price: 'From ₦15,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M10 28 Q10 12 24 12 Q38 12 38 28" stroke="#C9A84C" strokeWidth="1.5" fill="none" />
@@ -36,7 +35,6 @@ const services = [
     id: 'nails',
     name: 'Nail Artistry',
     desc: 'Manicures, pedicures, nail extensions and intricate nail art designs',
-    price: 'From ₦5,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="16" y="22" width="5" height="14" rx="2.5" stroke="#C9A84C" strokeWidth="1.5" />
@@ -53,7 +51,6 @@ const services = [
     id: 'barbering',
     name: 'Barbering',
     desc: 'Precision cuts, beard shaping, hot towel shaves and grooming for the modern man',
-    price: 'From ₦4,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M12 36 L24 12 L36 36" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" fill="none" />
@@ -69,7 +66,6 @@ const services = [
     id: 'plaiting',
     name: 'Hair Plaiting',
     desc: 'Box braids, cornrows, twists, knotless braids and all protective styles',
-    price: 'From ₦10,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M20 8 C16 16 24 20 20 28 C16 36 20 44 20 44" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" fill="none" />
@@ -86,7 +82,6 @@ const services = [
     id: 'spa',
     name: 'Spa Treatments',
     desc: 'Facials, scalp treatments, deep conditioning and full relaxation spa packages',
-    price: 'From ₦12,000',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M24 8 C24 8 16 16 16 24 C16 32 20 36 24 36 C28 36 32 32 32 24 C32 16 24 8 24 8Z"
@@ -101,6 +96,8 @@ const services = [
 ]
 
 export default function Services() {
+  const navigate = useNavigate()
+
   const scrollToBooking = () =>
     document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
 
@@ -114,18 +111,26 @@ export default function Services() {
           </h2>
           <div className="section-divider" />
         </div>
-        <button className="btn btn--outline" onClick={scrollToBooking}>
-          Book Any Service
-        </button>
+        <div className="services__header-actions">
+          <button className="btn btn--outline-gold" onClick={() => navigate('/prices')}>
+            See Our Prices
+          </button>
+          <button className="btn btn--outline" onClick={scrollToBooking}>
+            Book Any Service
+          </button>
+        </div>
       </div>
 
       <div className="services__grid" role="list">
-        {services.map(({ id, name, desc, price, icon }) => (
-          <article className="service-card" key={id} role="listitem">
+        {services.map(({ id, name, desc, icon }) => (
+          <article
+            className="service-card"
+            key={id}
+            role="listitem"
+          >
             <div className="service-card__icon">{icon}</div>
             <h3 className="service-card__name">{name}</h3>
             <p className="service-card__desc">{desc}</p>
-            <p className="service-card__price">{price}</p>
             <span className="service-card__arrow" aria-hidden="true">↗</span>
           </article>
         ))}

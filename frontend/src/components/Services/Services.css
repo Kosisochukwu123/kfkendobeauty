@@ -114,3 +114,43 @@
     padding: 1.5rem 1.2rem;
   }
 }
+
+
+/* ── Header actions row ── */
+.services__header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Gold outlined button — "See Our Prices" */
+.btn--outline-gold {
+  display: inline-block;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  padding: 0.75rem 1.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn--outline-gold:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+/* Responsive — stack buttons on narrow screens */
+@media (max-width: 600px) {
+  .services__header-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
