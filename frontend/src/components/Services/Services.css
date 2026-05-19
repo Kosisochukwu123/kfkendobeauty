@@ -89,20 +89,6 @@
   color: var(--gold);
 }
 
-.service-card__arrow {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  color: rgba(201, 168, 76, 0.3);
-  font-size: 1.2rem;
-  transition: var(--transition-base);
-  line-height: 1;
-}
-
-.service-card:hover .service-card__arrow {
-  color: var(--gold);
-  transform: translate(3px, -3px);
-}
 
 /* ── Responsive ── */
 @media (max-width: 480px) {

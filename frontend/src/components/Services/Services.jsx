@@ -131,7 +131,6 @@ export default function Services() {
             <div className="service-card__icon">{icon}</div>
             <h3 className="service-card__name">{name}</h3>
             <p className="service-card__desc">{desc}</p>
-            <span className="service-card__arrow" aria-hidden="true">↗</span>
           </article>
         ))}
       </div>
