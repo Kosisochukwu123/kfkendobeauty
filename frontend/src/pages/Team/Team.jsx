@@ -91,7 +91,7 @@ export default function Team() {
                 <div className="team-card__overlay" aria-hidden="true">
                   <div className="team-card__social">
                     <a
-                      href="https://instagram.com/kfkendobeauty"
+                      href="https://instagram.com/salonname"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="team-card__social-link"
@@ -100,7 +100,7 @@ export default function Team() {
                       <IgIcon />
                     </a>
                     <a
-                      href="https://facebook.com/kfkendobeauty"
+                      href="https://facebook.com/salonname"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="team-card__social-link"

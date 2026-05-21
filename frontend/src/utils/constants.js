@@ -3,15 +3,15 @@
  */
 
 export const BRAND = {
-  name:    'Kfkendo Beauty',
+  name:    'salonname Beauty',
   tagline: 'Hair · Beauty · Spa',
-  phone:   '+234 800 KFKENDO',
-  email:   'hello@kfkendobeauty.com',
+  phone:   '+234 800 salonname',
+  email:   'hello@salonname.com',
   address: 'Lagos, Nigeria',
   social: {
-    instagram: 'https://instagram.com/kfkendobeauty',
-    facebook:  'https://facebook.com/kfkendobeauty',
-    threads:   'https://threads.net/@kfkendobeauty',
+    instagram: 'https://instagram.com/salonname',
+    facebook:  'https://facebook.com/salonname',
+    threads:   'https://threads.net/@salonname',
   },
 }
 

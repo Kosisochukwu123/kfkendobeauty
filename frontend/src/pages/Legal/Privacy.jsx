@@ -23,7 +23,7 @@ export default function Privacy() {
         </nav>
 
         <div className="legal-highlight">
-          Your privacy matters to us. This policy explains what personal information Kfkendo Beauty
+          Your privacy matters to us. This policy explains what personal information salonname Beauty
           collects, how we use it, and your rights in relation to it. We are based in
           Uyo, Akwa Ibom State, Nigeria.
         </div>
@@ -31,10 +31,10 @@ export default function Privacy() {
         <div className="legal-section">
           <h2 className="legal-section__title"><span className="legal-section__num">1.</span>Who We Are</h2>
           <p>
-            Kfkendo Beauty is a luxury hair, beauty and spa salon operating in Uyo, Akwa Ibom State,
+            salonname Beauty is a luxury hair, beauty and spa salon operating in Uyo, Akwa Ibom State,
             Nigeria. When this policy refers to <strong>"we"</strong>, <strong>"us"</strong> or
-            <strong> "our"</strong>, it means Kfkendo Beauty. You can contact us at{' '}
-            <a href="mailto:hello@kfkendobeauty.com">hello@kfkendobeauty.com</a>.
+            <strong> "our"</strong>, it means salonname Beauty. You can contact us at{' '}
+            <a href="mailto:hello@salonname.com">hello@salonname.com</a>.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function Privacy() {
           </ul>
           <p>
             To exercise any of these rights, contact us at{' '}
-            <a href="mailto:hello@kfkendobeauty.com">hello@kfkendobeauty.com</a>.
+            <a href="mailto:hello@salonname.com">hello@salonname.com</a>.
             We will respond within 30 days.
           </p>
         </div>
@@ -135,8 +135,8 @@ export default function Privacy() {
             please contact us:
           </p>
           <ul>
-            <li>Email: <a href="mailto:hello@kfkendobeauty.com">hello@kfkendobeauty.com</a></li>
-            <li>Phone: +234 800 KFKENDO</li>
+            <li>Email: <a href="mailto:hello@salonname.com">hello@salonname.com</a></li>
+            <li>Phone: +234 800 salonname</li>
             <li>Address: Uyo, Akwa Ibom State, Nigeria</li>
           </ul>
         </div>

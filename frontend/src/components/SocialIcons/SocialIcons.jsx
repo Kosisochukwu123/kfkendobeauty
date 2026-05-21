@@ -4,7 +4,7 @@ import './SocialIcons.css'
 const socials = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com/kfkendobeauty',
+    href: 'https://facebook.com/salonname',
     icon: (
       <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M13 4H10.5C9.7 4 9 4.7 9 5.5V8H13L12.4 11.5H9V20H5.5V11.5H3V8H5.5V5.5C5.5 2.8 7.3 1 10 1H13V4Z"
@@ -14,7 +14,7 @@ const socials = [
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/kfkendobeauty',
+    href: 'https://instagram.com/salonname',
     icon: (
       <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="1.3" />
@@ -25,7 +25,7 @@ const socials = [
   },
   {
     label: 'Threads',
-    href: 'https://threads.net/@kfkendobeauty',
+    href: 'https://threads.net/@salonname',
     icon: (
       <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path

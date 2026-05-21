@@ -52,7 +52,7 @@ export default function Features() {
     <section className="features" id="features" aria-labelledby="features-heading">
       <p className="section-label section-label--center">Why Choose Us</p>
       <h2 className="section-title section-title--center" id="features-heading">
-        The <em>Kfkendo</em> Difference
+        The <em>salonname</em> Difference
       </h2>
       <div className="gold-line gold-line--center" aria-hidden="true" />
 

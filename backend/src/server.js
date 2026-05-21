@@ -1,5 +1,5 @@
 /**
- * Kfkendo Beauty — Express Server
+ * salonname Beauty — Express Server
  * NOTE: Backend routes are scaffolded but not wired to the frontend.
  *       Activate once the client approves the full stack build.
  */
@@ -24,7 +24,7 @@ app.use(morgan('dev'))
 
 // ── Health check ──
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', message: 'Kfkendo Beauty API is running' })
+  res.json({ status: 'ok', message: 'salonname Beauty API is running' })
 })
 
 // ── Routes (activate when approved) ──
@@ -46,7 +46,7 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`✨ Kfkendo Beauty API running on http://localhost:${PORT}`)
+  console.log(`✨ salonname Beauty API running on http://localhost:${PORT}`)
 })
 
 module.exports = app

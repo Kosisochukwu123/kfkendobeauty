@@ -54,7 +54,7 @@ export default function Booking() {
         </h2>
         <div className="gold-line gold-line--center" aria-hidden="true" />
         <p className="section-desc section-desc--center" style={{ marginTop: '1rem' }}>
-          Reserve your spot with our expert team and experience the Kfkendo difference
+          Reserve your spot with our expert team and experience the salonname difference
         </p>
 
         {submitted ? (

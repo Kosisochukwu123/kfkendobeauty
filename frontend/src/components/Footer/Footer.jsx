@@ -40,7 +40,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Link to="/" className="footer__logo">
-            Kfkendo<span>.</span>
+            salonname<span>.</span>
           </Link>
           <p className="footer__desc">
             Luxury hair, beauty and spa services crafted to celebrate your most radiant self.
@@ -84,8 +84,8 @@ export default function Footer() {
             ))}
           </div>
           <div className="footer__contact" aria-label="Contact information">
-            <span className="footer__contact-item">📞 +234 800 KFKENDO</span>
-            <span className="footer__contact-item">✉ hello@kfkendobeauty.com</span>
+            <span className="footer__contact-item">📞 +234 800 salonname</span>
+            <span className="footer__contact-item">✉ hello@salonname.com</span>
             <span className="footer__contact-item">📍 Lagos, Nigeria</span>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="footer__bottom">
-        <p className="footer__copy">© 2025 Kfkendo Beauty. All rights reserved.</p>
+        <p className="footer__copy">© 2025 salonname Beauty. All rights reserved.</p>
         <div className="footer__legal">
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/terms">Terms of Service</Link>

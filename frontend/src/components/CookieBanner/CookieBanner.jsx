@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './CookieBanner.css'
 
-const STORAGE_KEY = 'kfkendo_cookie_consent'
+const STORAGE_KEY = 'salonname_cookie_consent'
 
 export default function CookieBanner() {
   const [visible,   setVisible]   = useState(false)

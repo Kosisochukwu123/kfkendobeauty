@@ -68,7 +68,7 @@ export default function Navbar() {
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`} aria-label="Main navigation">
         <Link to="/" className="navbar__logo">
-          Kfkendo<span>.</span>
+          salonname<span>.</span>
         </Link>
 
         {/* ── Desktop links ── */}

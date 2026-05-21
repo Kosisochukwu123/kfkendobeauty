@@ -6,7 +6,7 @@ import './WhatsAppButton.css'
 // Nigeria example: 2348012345678
 const WHATSAPP_NUMBER = '2348000000000'
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Hi Kfkendo Beauty! I\'d like to book an appointment. 😊'
+  'Hi salonname Beauty! I\'d like to book an appointment. 😊'
 )
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
 // ──────────────────────────────────────────────────────────────────

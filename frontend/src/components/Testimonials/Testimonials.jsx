@@ -4,7 +4,7 @@ import './Testimonials.css'
 const testimonials = [
   {
     id: 1,
-    text: 'Kfkendo completely transformed my look. The team understood exactly what I wanted and delivered beyond expectations. I left feeling like an absolute queen!',
+    text: 'salonname completely transformed my look. The team understood exactly what I wanted and delivered beyond expectations. I left feeling like an absolute queen!',
     name: 'Adaeze Okafor',
     role: 'Loyal Client',
     initials: 'AO',

@@ -6,7 +6,7 @@ const UPDATED = 'January 2025'
 
 export default function CookiePolicy() {
   const clearCookies = () => {
-    localStorage.removeItem('kfkendo_cookie_consent')
+    localStorage.removeItem('salonname_cookie_consent')
     window.location.reload()
   }
 
@@ -27,7 +27,7 @@ export default function CookiePolicy() {
         </nav>
 
         <div className="legal-highlight">
-          This Cookie Policy explains what cookies are, which ones we use on the Kfkendo Beauty
+          This Cookie Policy explains what cookies are, which ones we use on the salonname Beauty
           website, and how you can control them. By accepting cookies on our site, you agree
           to their use as described below.
         </div>
@@ -48,7 +48,7 @@ export default function CookiePolicy() {
 
         <div className="legal-section">
           <h2 className="legal-section__title"><span className="legal-section__num">2.</span>Cookies We Use</h2>
-          <p>The Kfkendo Beauty website uses the following types of cookies and browser storage:</p>
+          <p>The salonname Beauty website uses the following types of cookies and browser storage:</p>
 
           <table className="legal-cookie-table" aria-label="Cookie types">
             <thead>
@@ -60,7 +60,7 @@ export default function CookiePolicy() {
             </thead>
             <tbody>
               <tr>
-                <td><strong>kfkendo_cookie_consent</strong><br /><em>Essential</em></td>
+                <td><strong>salonname_cookie_consent</strong><br /><em>Essential</em></td>
                 <td>Stores your cookie consent choice so we do not ask you again on every visit</td>
                 <td>1 year</td>
               </tr>
@@ -189,7 +189,7 @@ export default function CookiePolicy() {
           <h2 className="legal-section__title"><span className="legal-section__num">8.</span>Contact Us</h2>
           <p>
             If you have questions about how we use cookies, contact us at{' '}
-            <a href="mailto:hello@kfkendobeauty.com">hello@kfkendobeauty.com</a>.
+            <a href="mailto:hello@salonname.com">hello@salonname.com</a>.
           </p>
         </div>
       </div>

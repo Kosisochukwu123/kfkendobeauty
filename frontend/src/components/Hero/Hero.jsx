@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="hero__img-panel" aria-hidden="true">
         <img
           src="/images/hero-image"
-          alt="Kfkendo Beauty salon"
+          alt="salonname Beauty salon"
           className="hero__img"
           onError={(e) => {
             /* Silently fall back to the gradient if the file has an extension
@@ -55,7 +55,7 @@ export default function Hero() {
           <strong>Meets Artistry</strong>
         </h1>
 
-        <p className="hero__subtitle">Kfkendobeauty Luxury Salon</p>
+        <p className="hero__subtitle">salonname Luxury Salon</p>
 
         <p className="hero__desc">
           Experience transformative beauty services crafted with precision and passion.

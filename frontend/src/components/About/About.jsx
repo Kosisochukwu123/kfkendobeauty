@@ -58,7 +58,7 @@ export default function About() {
           </h2>
           <div className="section-divider" />
           <p className="section-desc">
-            Kfkendo Beauty is more than a salon — it's a sanctuary where artistry meets luxury.
+            salonname Beauty is more than a salon — it's a sanctuary where artistry meets luxury.
             Our team of seasoned professionals are dedicated to bringing out your most radiant
             self through tailored beauty experiences.
           </p>

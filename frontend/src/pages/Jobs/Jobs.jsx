@@ -3,7 +3,7 @@ import "./Jobs.css";
 
 /* ── Job listings data ─────────────────────────────────────────────
    These are the vacancies that appear when someone searches
-   "Kfkendo Beauty jobs" or "Kfkendo Beauty vacancy" on Google.
+   "salonname Beauty jobs" or "salonname Beauty vacancy" on Google.
    The page title and meta description handle the SEO side.
    ────────────────────────────────────────────────────────────────── */
 const vacancies = [
@@ -178,16 +178,16 @@ export default function Jobs() {
         {/* This text helps search engines find the page for job searches */}
         <p className="section-label section-label--center">Careers</p>
         <h1 className="jobs-page__hero-title">
-          Join the <em>Kfkendo</em> Family
+          Join the <em>salonname</em> Family
         </h1>
         <div className="gold-line gold-line--center" aria-hidden="true" />
         <p className="jobs-page__hero-desc">
           We are always looking for talented, passionate beauty professionals to
           grow with us. Browse our current openings and apply below.
         </p>
-        {/* Visible SEO text — helps Google surface this page for "Kfkendo vacancy" searches */}
+        {/* Visible SEO text — helps Google surface this page for "salonname vacancy" searches */}
         <div className="jobs-page__seo-tag">
-          Now Hiring · Kfkendo Beauty · Uyo, Akwa Ibom · Nigeria
+          Now Hiring · salonname Beauty · Uyo, Akwa Ibom · Nigeria
         </div>
       </div>
 
@@ -365,7 +365,7 @@ export default function Jobs() {
                       id="about"
                       name="about"
                       className="form-group__textarea"
-                      placeholder="Describe your experience, skills, and why you want to join Kfkendo Beauty..."
+                      placeholder="Describe your experience, skills, and why you want to join salonname Beauty..."
                       value={form.about}
                       onChange={handleChange}
                     />

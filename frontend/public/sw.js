@@ -1,8 +1,8 @@
-/*  Kfkendo Beauty — Service Worker v2
+/*  salonname Beauty — Service Worker v2
     Pre-caches images on install so they are available
     from the very first page load, no flashing.          */
 
-const CACHE_NAME = 'kfkendo-v2'
+const CACHE_NAME = 'salonname-v2'
 
 // List every image you have here — they get cached immediately
 // on install before the user even sees the page

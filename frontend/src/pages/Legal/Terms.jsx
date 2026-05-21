@@ -29,7 +29,7 @@ export default function Terms() {
         <div className="legal-section">
           <h2 className="legal-section__title"><span className="legal-section__num">1.</span>About Us</h2>
           <p>
-            These terms govern your use of the Kfkendo Beauty website and the services we provide
+            These terms govern your use of the salonname Beauty website and the services we provide
             at our salon in Uyo, Akwa Ibom State, Nigeria. By accessing our website or booking
             a service, you confirm that you are at least 18 years old or have parental consent.
           </p>
@@ -99,7 +99,7 @@ export default function Terms() {
         <div className="legal-section">
           <h2 className="legal-section__title"><span className="legal-section__num">7.</span>Website Use</h2>
           <p>
-            Our website and its content are owned by Kfkendo Beauty. You may not reproduce,
+            Our website and its content are owned by salonname Beauty. You may not reproduce,
             distribute, or use our content for commercial purposes without written permission.
           </p>
           <ul>
@@ -112,7 +112,7 @@ export default function Terms() {
         <div className="legal-section">
           <h2 className="legal-section__title"><span className="legal-section__num">8.</span>Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by Nigerian law, Kfkendo Beauty shall not be liable
+            To the fullest extent permitted by Nigerian law, salonname Beauty shall not be liable
             for any indirect, incidental or consequential loss or damage arising from your use
             of our website or services. Our total liability in relation to any claim shall not
             exceed the amount you paid for the service in question.
@@ -132,8 +132,8 @@ export default function Terms() {
           <h2 className="legal-section__title"><span className="legal-section__num">10.</span>Contact</h2>
           <p>
             For any questions about these terms, contact us at{' '}
-            <a href="mailto:hello@kfkendobeauty.com">hello@kfkendobeauty.com</a> or
-            call +234 800 KFKENDO.
+            <a href="mailto:hello@salonname.com">hello@salonname.com</a> or
+            call +234 800 salonname.
           </p>
         </div>
       </div>

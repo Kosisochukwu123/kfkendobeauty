@@ -168,7 +168,7 @@ export default function MapSection() {
                     href="tel:+2348000000000"
                     style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    +234 800 KFKENDO
+                    +234 800 salonname
                   </a>
                 </p>
               </div>
@@ -182,10 +182,10 @@ export default function MapSection() {
                 <p className="map-section__detail-label">Email</p>
                 <p className="map-section__detail-value">
                   <a
-                    href="mailto:hello@kfkendobeauty.com"
+                    href="mailto:hello@salonname.com"
                     style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    hello@kfkendobeauty.com
+                    hello@salonname.com
                   </a>
                 </p>
               </div>
@@ -214,7 +214,7 @@ export default function MapSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="map-section__directions-btn"
-            aria-label="Get directions to Kfkendo Beauty on Google Maps"
+            aria-label="Get directions to salonname Beauty on Google Maps"
           >
             <NavigateIcon />
             Get Directions
@@ -226,7 +226,7 @@ export default function MapSection() {
           <iframe
             className="map-section__map-frame"
             src={MAP_EMBED_URL}
-            title="Kfkendo Beauty salon location on map"
+            title="salonname Beauty salon location on map"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

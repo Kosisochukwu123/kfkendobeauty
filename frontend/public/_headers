@@ -1,4 +1,4 @@
-# Kfkendo Beauty — HTTP cache headers
+# salonname Beauty — HTTP cache headers
 # (Netlify / any static host respects this file)
 
 # Images — cache for 1 year, immutable

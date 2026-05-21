@@ -1,4 +1,4 @@
-# Kfkendo Beauty — Luxury Salon & Spa Website
+# salonname Beauty — Luxury Salon & Spa Website
 
 A modern, luxury unisex salon and beauty brand website delivering a calm, elegant, and premium digital experience.
 
@@ -16,7 +16,7 @@ A modern, luxury unisex salon and beauty brand website delivering a calm, elegan
 
 ## Project Structure
 ```
-kfkendobeauty/
+salonname/
 ├── frontend/         # React client application
 ├── backend/          # Express REST API (placeholder)
 └── package.json      # Root scripts (monorepo)
